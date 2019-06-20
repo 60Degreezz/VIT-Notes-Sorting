@@ -12,15 +12,16 @@ Required libs:
 4. pyinstaller
 
 After downloading the python file, open it and do the following:
-1. Change the Sorted_Folder_Location and Downloads variable paths to the locations to which you want the notes to get dumped and where the downloaded files go from the VTOP portal.
 
-2.Run the code and make sure that the code runs properly on your system.
+Change the Sorted_Folder_Location and Downloads variable paths to the locations to which you want the notes to get dumped and where the downloaded files go from the VTOP portal.
 
-3.To convert the python file into a executeable go to the folder in which the code is saved and open cmd in the folder. 
+Run the code and make sure that the code runs properly on your system.
 
-4.Run the following command : "pyinstaller -w File_Sorter.py". This will create 2 folders, the executable will be in the dist folder.
+To convert the python file into a executeable go to the folder in which the code is saved and open cmd in the folder. 
 
-5. Copy the executabel and paste a shortcut in this folder: 'C:/Users/ADMIN/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/'
+Run the following command : "pyinstaller -w File_Sorter.py". This will create 2 folders, the executable will be in the dist folder.
+
+Copy the executabel and paste a shortcut in this folder: 'C:/Users/ADMIN/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/'
 
 
 In my experience this code running in the background dosen't cause the PC to slow down or anything like this. If you have any suggestions or comments so ask.

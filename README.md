@@ -26,6 +26,6 @@ Copy the executabel and paste a shortcut in this folder: 'C:/Users/ADMIN/AppData
 
 In my experience this code running in the background dosen't cause the PC to slow down or anything like this. If you have any suggestions or comments so ask.
 
-Authors
+Authors    
 Himasava     
 Praneeth    

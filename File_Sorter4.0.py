@@ -15,7 +15,7 @@ Follow the following step to make that happen.
 4. Run the code and make sure no errors popup. You can see that all the VIT files vanish from the Downloads folder and new folders appear in the given put location.
 5. For making an excuteable we will use the pyinstaller lib, download and install it using pip.
 6. Open cmd in the folder in which this py code is saved.
-7. Run the command 'pyinstall -w -F File_Sorter3.0.py'
+7. Run the command 'pyinstall -w -F File_Sorter4.0.py'
 8. Copy the exe file and paste it in the following folder : 'C:/Users/ADMIN/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/'
    
 '''

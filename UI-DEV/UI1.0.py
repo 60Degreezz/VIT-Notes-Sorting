@@ -6,10 +6,14 @@ class Notes(wx.Frame):
     A Frame that says Hello World
     """
 
+
+
     def __init__(self, *args, **kw):
         # ensure the parent's __init__ is called
         super(Notes, self).__init__(*args, **kw)
 
+        self.loc1="default"
+        self.loc2="default"
         # create a panel in the frame
         panel = wx.Panel(self)
 
@@ -88,12 +92,14 @@ class Notes(wx.Frame):
                                #| wx.DD_CHANGE_DIR
                                )
             if dlg.ShowModal() == wx.ID_OK:
-                print("%s" %dlg.GetPath())
+                #print("%s" %dlg.GetPath())
                 btn = event.Id
                 if btn == 1:
                     self.tc1.SetValue(str(dlg.GetPath()))
+                    self.loc1 = str(dlg.GetPath())
                 elif btn == 2:
                     self.tc2.SetValue(str(dlg.GetPath()))
+                    self.loc2 = str(dlg.GetPath())
             dlg.Destroy()
 
 
@@ -137,9 +143,14 @@ class Notes(wx.Frame):
         self.Bind(wx.EVT_MENU, self.OnExit,  exitItem)
         self.Bind(wx.EVT_MENU, self.OnAbout, aboutItem)
 
+    def info1(self):
+        return self.loc1
+    def info2(self):
+        return self.loc2
 
     def OnExit(self, event):
         """Close the frame, terminating the application."""
+
         self.Close(True)
 
 
@@ -162,3 +173,8 @@ if __name__ == '__main__':
     frm = Notes(None, title='Notes Sharing')
     frm.Show()
     app.MainLoop()
+    #Storage Location
+    loc1 = frm.info1()
+    #Download Location
+    loc2 = frm.info2()
+    print(loc1, loc2)

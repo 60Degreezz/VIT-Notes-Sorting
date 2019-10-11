@@ -115,7 +115,7 @@ class Notes(wx.Frame):
         fileMenu = wx.Menu()
         # The "\t..." syntax defines an accelerator key that also triggers
         # the same event
-        helloItem = fileMenu.Append(-1, "&Hello...\tCtrl-H","Help string shown in status bar for this menu item")
+        helloItem = fileMenu.Append(-1, "&ComingSoon\tCtrl-H","Under Development")
         fileMenu.AppendSeparator()
         # When using a stock ID we don't need to specify the menu item's
         # label
@@ -156,13 +156,13 @@ class Notes(wx.Frame):
 
     def OnHello(self, event):
         """Say hello to the user."""
-        wx.MessageBox("Hello again from wxPython")
+        wx.MessageBox("Under Develpoment")
 
 
     def OnAbout(self, event):
         """Display an About Dialog"""
-        wx.MessageBox("This is a wxPython Hello World sample",
-                      "About Hello World 2",
+        wx.MessageBox("Under Development",
+                      "About",
                       wx.OK|wx.ICON_INFORMATION)
 
 

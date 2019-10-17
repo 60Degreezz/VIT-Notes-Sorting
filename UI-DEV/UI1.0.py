@@ -1,5 +1,10 @@
 
 import wx
+import os
+import sys
+
+loc1="default"
+loc2="default"
 
 class Notes(wx.Frame):
     """
@@ -12,8 +17,7 @@ class Notes(wx.Frame):
         # ensure the parent's __init__ is called
         super(Notes, self).__init__(*args, **kw)
 
-        self.loc1="default"
-        self.loc2="default"
+
         # create a panel in the frame
         panel = wx.Panel(self)
 
@@ -36,6 +40,8 @@ class Notes(wx.Frame):
         sizer.Add(st, wx.SizerFlags().Border(wx.TOP|wx.LEFT, 25))
         panel.SetSizer(sizer)"""
 
+        icon = wx.StaticBitmap(panel, bitmap=wx.Bitmap(os.path.join(sys.path[0], "icon.png")))
+        sizer.Add(icon, pos=(0, 8), flag=wx.TOP|wx.RIGHT|wx.ALIGN_RIGHT,border=5)
         #Show DieDialog-1 button
         dirDlgBtn1 = wx.Button(panel, label="Browse" , id = 1 )
         sizer.Add(dirDlgBtn1, pos=(1, 14), flag=wx.TOP|wx.RIGHT, border=5)
@@ -64,8 +70,13 @@ class Notes(wx.Frame):
         self.tc2 = wx.TextCtrl(panel, value = "Default")
         sizer.Add(self.tc2, pos=(2, 1), span=(1, 13), flag=wx.TOP|wx.EXPAND,border=5)
 
+        Okbtn = wx.Button(panel, label="OK")
+        sizer.Add(Okbtn, pos=(3,13), flag=wx.LEFT|wx.TOP, border=5)
+        Okbtn.Bind(wx.EVT_BUTTON, self.OnOk)
 
-
+        Cancelbtn = wx.Button(panel, label="Cancel")
+        sizer.Add(Cancelbtn, pos=(3,14), flag=wx.LEFT|wx.TOP, border=5)
+        Cancelbtn.Bind(wx.EVT_BUTTON, self.OnExit)
 
         # create a menu bar
         self.makeMenuBar()
@@ -94,12 +105,13 @@ class Notes(wx.Frame):
             if dlg.ShowModal() == wx.ID_OK:
                 #print("%s" %dlg.GetPath())
                 btn = event.Id
+                global loc1,loc2
                 if btn == 1:
                     self.tc1.SetValue(str(dlg.GetPath()))
-                    self.loc1 = str(dlg.GetPath())
+                    loc1 = str(dlg.GetPath())
                 elif btn == 2:
                     self.tc2.SetValue(str(dlg.GetPath()))
-                    self.loc2 = str(dlg.GetPath())
+                    loc2 = str(dlg.GetPath())
             dlg.Destroy()
 
 
@@ -143,16 +155,20 @@ class Notes(wx.Frame):
         self.Bind(wx.EVT_MENU, self.OnExit,  exitItem)
         self.Bind(wx.EVT_MENU, self.OnAbout, aboutItem)
 
-    def info1(self):
+    """def info1(self):
         return self.loc1
     def info2(self):
-        return self.loc2
+        return self.loc2"""
 
     def OnExit(self, event):
         """Close the frame, terminating the application."""
-
+        global loc1,loc2
+        loc1="default"
+        loc2="default"
         self.Close(True)
 
+    def OnOk(self,event):
+        self.Close(True)
 
     def OnHello(self, event):
         """Say hello to the user."""
@@ -174,7 +190,7 @@ if __name__ == '__main__':
     frm.Show()
     app.MainLoop()
     #Storage Location
-    loc1 = frm.info1()
+    #loc1 = frm.info1()
     #Download Location
-    loc2 = frm.info2()
+    #loc2 = frm.info2()
     print(loc1, loc2)

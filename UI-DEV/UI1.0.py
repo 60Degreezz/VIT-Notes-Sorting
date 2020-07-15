@@ -7,12 +7,6 @@ loc1="default"
 loc2="default"
 
 class Notes(wx.Frame):
-    """
-    A Frame that says Hello World
-    """
-
-
-
     def __init__(self, *args, **kw):
         # ensure the parent's __init__ is called
         super(Notes, self).__init__(*args, **kw)
@@ -83,14 +77,10 @@ class Notes(wx.Frame):
 
         # and a status bar
         self.CreateStatusBar()
-        self.SetStatusText("Still in trial")
-
-
+        self.SetStatusText("V1.0")
         sizer.AddGrowableCol(2)
-
         panel.SetSizer(sizer)
         sizer.Fit(self)
-
 
     #To get dir folder location
     def onDir(self, event):
@@ -114,20 +104,17 @@ class Notes(wx.Frame):
                     loc2 = str(dlg.GetPath())
             dlg.Destroy()
 
-
-
     def makeMenuBar(self):
         """
         A menu bar is composed of menus, which are composed of menu items.
         This method builds a set of menus and binds handlers to be called
         when the menu item is selected.
         """
-
         # Make a file menu with Hello and Exit items
         fileMenu = wx.Menu()
         # The "\t..." syntax defines an accelerator key that also triggers
         # the same event
-        helloItem = fileMenu.Append(-1, "&ComingSoon\tCtrl-H","Under Development")
+        futureitem = fileMenu.Append(-1, "&ComingSoon\tCtrl-H","Under Development \U0001f60E")
         fileMenu.AppendSeparator()
         # When using a stock ID we don't need to specify the menu item's
         # label
@@ -151,7 +138,7 @@ class Notes(wx.Frame):
         # Finally, associate a handler function with the EVT_MENU event for
         # each of the menu items. That means that when that menu item is
         # activated then the associated handler function will be called.
-        self.Bind(wx.EVT_MENU, self.OnHello, helloItem)
+        self.Bind(wx.EVT_MENU, self.OnFuture, futureitem)
         self.Bind(wx.EVT_MENU, self.OnExit,  exitItem)
         self.Bind(wx.EVT_MENU, self.OnAbout, aboutItem)
 
@@ -170,14 +157,12 @@ class Notes(wx.Frame):
     def OnOk(self,event):
         self.Close(True)
 
-    def OnHello(self, event):
-        """Say hello to the user."""
-        wx.MessageBox("Under Develpoment")
-
+    def OnFuture(self, event):
+        wx.MessageBox("Future updates will be Coming Soon \U0001f60E")
 
     def OnAbout(self, event):
         """Display an About Dialog"""
-        wx.MessageBox("Under Development",
+        wx.MessageBox("This is a app for sorting files from download to a specified location \U0001f60E \nFor any issues and suggestions please submit in:\n\U000027A1https://github.com/60Degrees/VIT-Notes-Sorting/",
                       "About",
                       wx.OK|wx.ICON_INFORMATION)
 

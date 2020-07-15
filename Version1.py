@@ -2,6 +2,7 @@ import os
 import shutil, csv
 from time import sleep
 import wx
+import sys
 
 Download_Loc = ''
 Sorting_Loc = ''
@@ -10,13 +11,11 @@ Project_Dir = os.getcwd()
 def Read_CSV():
     global Project_Dir
     course_data = []
-    read_file = open('Course_List.csv','r') 
-    #with open('Course_List.csv','r') as read_file:
-    reader = csv.reader(read_file)
-    for row in reader:
-        if row !=[]:
-            course_data.append(row)
-    read_file.close()
+    with open('Course_List.csv','r') as read_file:
+        reader = csv.reader(read_file)
+        for row in reader:
+            if row !=[]:
+                course_data.append(row)
     return(course_data)
 
 def Scan_Sort():
@@ -94,7 +93,6 @@ def Folder_Check_Create(split_files):
             os.mkdir(file[4])
 
 def Move_Replace(split_files):
-    unmoved_files = []
     for file in split_files:
         move_folder = Sorting_Loc + '/VIT_NOTES/' + str(file[2]) + "/" + str(file[1]) + "/" + str(file[3]) + "/" + str(file[4])
         file_duplication_check = os.listdir(move_folder)
@@ -112,18 +110,13 @@ def Move_Replace(split_files):
 
 
 class Notes(wx.Frame):
-    """
-    A Frame that says Hello World
-    """
-
-
-
+    
     def __init__(self, *args, **kw):
         # ensure the parent's __init__ is called
         super(Notes, self).__init__(*args, **kw)
 
-        self.loc1=""
-        self.loc2=""
+        self.loc1="default"
+        self.loc2="default"
         # create a panel in the frame
         panel = wx.Panel(self)
 
@@ -281,7 +274,6 @@ def UI_Accept_Address(course_data):
     global Sorting_Loc, Download_Loc, Project_Dir
     # When this module is run (not imported) then create the app, the
     # frame, show it, and start the event loop.
-    write_file = open('Course_List.csv','w')
     app = wx.App()
     frm = Notes(None, title='Notes Sharing')
     frm.Show()
@@ -290,23 +282,19 @@ def UI_Accept_Address(course_data):
     Accepted_Sorting_Loc = str(frm.info1())
     #Download Location
     Accepted_Download_Loc = str(frm.info2())
+    if (Accepted_Sorting_Loc=="default" or Accepted_Download_Loc=="default"):
+        sys.exit()
     try:
         os.chdir(Accepted_Download_Loc)
-        os.chdir('C:/')
+        os.chdir(Project_Dir)
     except:
         Accepted_Download_Loc += '/'
     try:
         os.chdir(Accepted_Sorting_Loc)
-        os.chdir('C:/')
+        os.chdir(Project_Dir)
     except:
         Accepted_Sorting_Loc += '/'
-    print(Accepted_Sorting_Loc)
-    print(Accepted_Download_Loc)
-    #Accepted_Sorting_Loc = "D:\\"
-    #Accepted_Download_Loc ="C:/Users/Himanshu/Downloads"   
     temp_data=[['Start',''],['Download',Accepted_Download_Loc],['Sorting',Accepted_Sorting_Loc]] + course_data
-    print(Accepted_Download_Loc, Accepted_Sorting_Loc)
-    print(temp_data)
     os.chdir(Project_Dir)
     with open('Course_List.csv','w') as write_file:
         writer = csv.writer(write_file)
@@ -334,7 +322,7 @@ def main():
         if len(os.listdir(Download_Loc))<download_file_no:
             download_file_no= len(os.listdir(Download_Loc))
         else:
-            os.chdir('C:')
+            os.chdir(Project_Dir)
             sleep(60)
     
     

@@ -41,7 +41,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 [Files]
 Source: "D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\VIT_Notes_Sorter.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\Course_List.csv"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\icon.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\icon.png"; DestDir: "{app}"; Flags: ignoreversion
 Source: "D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\VIT_Notes_Sorter.exe"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 

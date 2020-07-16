@@ -10,7 +10,7 @@
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{CC71CE76-1404-42D8-959F-56F940C50AA9}
+AppId={{C4F16E95-BED0-46C7-88C6-FDB9CBC5835F}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -21,12 +21,11 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
 LicenseFile=D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\LICENSE
-InfoBeforeFile=D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\Installation.txt
 InfoAfterFile=D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\Finish.txt
-; Remove the following line to run in administrative install mode (install for all users.)
-PrivilegesRequired=lowest
-OutputDir=D:\Offline_Projects\VIT-Notes-Sorting-master
-OutputBaseFilename=VIT Notes Sorter
+; Uncomment the following line to run in non administrative install mode (install for current user only.)
+;PrivilegesRequired=lowest
+OutputDir=D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting
+OutputBaseFilename=VIT Notes Sorter-setup
 SetupIconFile=D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\icon.ico
 Compression=lzma
 SolidCompression=yes
@@ -38,16 +37,18 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
+
 [Files]
 Source: "D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\VIT_Notes_Sorter.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\Course_List.csv"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\icon.png"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\icon.ico"; DestDir: "{app}"; Flags: ignoreversion
 Source: "D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\VIT_Notes_Sorter.exe"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
+Name: "{commonstartup}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; 
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent

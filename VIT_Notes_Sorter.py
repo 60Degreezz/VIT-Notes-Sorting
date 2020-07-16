@@ -4,6 +4,7 @@ import csv
 from time import sleep
 import wx
 import sys
+import appdirs
 
 '''
 This program is written by Himanshu Savargaonkar :)
@@ -23,14 +24,16 @@ Follow the following step to make that happen.
    
 '''
 
-CSV_File = "Course_List.csv"     #The location of the csv file
+
 Download_Loc = ''                #Download location 
 Sorting_Loc = ''                 #Sorting file saving location
-Project_Dir = os.getcwd()        #Project Directory
+Project_Dir = ''        #Project Directory
+AppData_Dir = ''
+CSV_File = "/Course_List.csv"     #The location of the csv file
 
 
 def Read_CSV():
-    global Project_Dir
+    global Project_Dir, CSV_File
     course_data = []
     with open(CSV_File,'r') as read_file:
         reader = csv.reader(read_file)
@@ -299,7 +302,7 @@ class Notes(wx.Frame):
 def UI_Accept_Address(course_data):
     global Sorting_Loc, Download_Loc, Project_Dir
     # When this module is run (not imported) then create the app, the
-    # frame, show it, and start the event loop.
+    # frame, show it, and start the event loop.    
     app = wx.App()
     frm = Notes(None, title='Notes Sharing')
     frm.Show()
@@ -315,24 +318,42 @@ def UI_Accept_Address(course_data):
     top_list = os.listdir(Accepted_Sorting_Loc)
     vit = "VIT_Sorted"
     if vit not in top_list:
-        os.chdir(Sorting_Loc)
+        os.chdir(Accepted_Sorting_Loc)
         os.mkdir(vit)
     Accepted_Sorting_Loc += vit + "/"
     temp_data=[['Start',''],['Download',Accepted_Download_Loc],['Sorting',Accepted_Sorting_Loc]] + course_data
     os.chdir(Project_Dir)
-    with open('Course_List.csv','w') as write_file:
+    with open(CSV_File,'w') as write_file:
         writer = csv.writer(write_file)
         writer.writerows(temp_data)
-    main()
+    
+
+def init():
+    global Download_Loc, Sorting_Loc, Project_Dir, AppData_Dir, CSV_File
+    AppData_Dir = appdirs.user_data_dir()
+    Project_Dir = os.getcwd()
+    os.chdir(AppData_Dir)
+    app_list = os.listdir(AppData_Dir)
+    folder = 'VIT_Notes_Sorter'
+    AppData_Dir = AppData_Dir + '/' + folder
+    if folder not in app_list:
+        os.mkdir(folder)
+        scr = Project_Dir + CSV_File
+        dest = AppData_Dir + CSV_File
+        shutil.copy2(scr, dest)
+    CSV_File = AppData_Dir + CSV_File
 
 def main():
     global Download_Loc, Sorting_Loc, Project_Dir
-    Project_Dir = os.getcwd()
+    init()
+    print(CSV_File)
     course_data = Read_CSV()
     no_of_files = 0 
     while True:
         if course_data[1][0] == 'default':
             UI_Accept_Address(course_data)
+            course_data = Read_CSV()
+            continue
         else:
             Download_Loc = course_data[1][1]
             Sorting_Loc = course_data[2][1]

@@ -1,31 +1,15 @@
-# VIT-Notes-Sorting
+VIT NOTES SORTER
 
-This project is only aimed at students of the Vellore Institue of Technology.
-As the students may now the notes downloaded from the VTOP online portal are downloaded with long file names and are a mess to organize and handle, especially during the exam times.
+As we all know VTOP files can be a mess sometimes. With there long file names and all being saved in the download folder it becomes hard to even find a single file. This program strives to fix this very issue.
 
-This Code that can be converted into a startup program will auto sort the notes, shorten the file name and place them in neatly organized folder system that is auto created.
+This program sorts the files into a well organized structure which is very user friendly and helps you find the files really fast. On top of that it also shortens the file name to a more readable format.
 
-Required libs:
-1. os
-2. shutil
-3. time
-4. pyinstaller
+Steps to follow after installation:
+1. Once installation is complete run the program.
+2. You will be prompted with an UI asking to fill the Sorting location and Download location.
+3. Sorting location is the directory in which you want the sorted files to be stored.
+4. Download location is the directory where you're web-brower downloads the VTOP files.
+5. Fill in these fields and click OK.
+6. Now the program is set and will be working behind the scene to make your life a bit easier.
 
-After downloading the python file, open it and do the following:
-
-Change the Sorted_Folder_Location and Downloads variable paths to the locations to which you want the notes to get dumped and where the downloaded files go from the VTOP portal.
-
-Run the code and make sure that the code runs properly on your system.
-
-To convert the python file into a executeable go to the folder in which the code is saved and open cmd in the folder. 
-
-Run the following command : "pyinstaller -w File_Sorter.py". This will create 2 folders, the executable will be in the dist folder.
-
-Copy the executabel and paste a shortcut in this folder: 'C:/Users/ADMIN/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/'
-
-
-In my experience this code running in the background dosen't cause the PC to slow down or anything like this. If you have any suggestions or comments so ask.
-
-Authors    
-Himasava     
-Praneeth    
+For further updates please go visit Github: https://github.com/60Degrees/VIT-Notes-Sorting

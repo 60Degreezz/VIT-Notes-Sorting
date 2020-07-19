@@ -14,6 +14,6 @@ Steps to follow after installation:
 
 For further updates please go visit Github: https://github.com/60Degrees/VIT-Notes-Sorting
 
-Authors
-HimaSava
+Authors:
+HimaSava, 
 Praneeth

@@ -13,3 +13,7 @@ Steps to follow after installation:
 6. Now the program is set and will be working behind the scene to make your life a bit easier.
 
 For further updates please go visit Github: https://github.com/60Degrees/VIT-Notes-Sorting
+
+Authors
+HimaSava
+Praneeth

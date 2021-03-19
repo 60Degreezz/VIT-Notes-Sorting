@@ -1,84 +1,80 @@
-Start,
-Download,D:\Downloads
-Sorting,D:\Offline_Projects\VIT-Notes-Sorting-master
-﻿Start,
-default,
-,
-,
-ECE1003,Electromagnetic Field Theory
-ECE2002,Analog Electronic Circuits
-MAT2002,Applications of Differential & Difference Equations
-ECE2003,Digital Logic Design
-ECE2005,Probability Theory & Random Processes
-ECE2008,Robotics and Automation
-MGT1022,Lean Startup Management
-CSE2001,Computer Architecture and Organization
-ECE2004,Transmission Lines & Waveguides
-ECE2006,Digital Signal Processing
-CSE2003,Data Structures and Algorithms
-CSE2005,Operating System
-CSE1002,Problem Solving & Object Oriented Programming
-MGT1034,Project Management
-CSE2004,Database Management Systems
-ECE3002,VLSI System Design
-ECE3003,Microcontroller & Its Applications
-ECE3001,Analog Communication Systems
-ECE3009,Neural Network and Fuzzy Control
-ECE3013,Linear Integrated Circuits
-GER1001,Grundstufe Deustch
-CSE3001,Software Engineering
-ECE4001,Digital Communications Systems
-MAT3004,Applied Linear Algebra
-ECE3005,Digital Image Processing
-ECE4003,Embedded System Design
-CSE6005,Machine Learning
-CSE4001,Parallel and Distributed Computing
-ECE4002,Advanced Microcontrollers
-ECE4011,Wireless Sensor Networks
-ECE4008,Computer Communication
-ECE1008,Electronics Hardware Trouble Shooting
-ECE3999,Technical Answers for Real World Problems
-CSE6009,IoT Technology and Applications
-ECE1001,Fundamentals of Electrical Circuits
-ECE1002,Semiconductor Devices and Circuits
-ECE1003,Electromagnetic Field Theory
-ECE1004,Signals and Systems
-ECE1005,Sensors and Instrumentation
-ECE2001,Network Theory
-ECE2002,Analog Electronic Circuits
-ECE2003,Digital Logic Design
-ECE2004,Transmission Lines and Waveguides
-ECE2005,Probability Theory and Random Processes
-ECE2006,Digital Signal Processing
-ECE3001,Analog Communication Systems
-ECE3002,VLSI System Design
-ECE3003,Microcontroller and its Applications
-ECE4001,Digital Communication Systems
-MAT2002,Applications of Differential and Difference Equations
-MAT3004,Applied Linear Algebra
-CSE2003,Data Structures and Algorithms
-CSE2005,Operating Systems
-ECE1006,Introduction to Nanoscience and Nanotechnology
-ECE1007,Opto Electronics
-ECE1008,Electronics Hardware Trouble Shooting
-ECE2008,Robotics and Automation
-ECE2010,Control Systems
-ECE3004,Computer Organization and Architectures
-ECE3005,Digital Image Processing
-ECE3009,Neural Networks and Fuzzy Control
-ECE3010,Antennas and Wave Propagation
-ECE3011,Microwave Engineering
-ECE3013,Linear Integrated Circuits
-ECE4002,Advanced Microcontrollers
-ECE4003,Embedded System Design
-ECE4004,Embedded C and Linux
-ECE4005,Optical Communication and Networks
-ECE4007,Information Theory and Coding
-ECE4008,Computer Communication
-ECE4009,Wireless and Mobile Communication
-ECE4010,Satellite Communication
-ECE4011,Wireless Sensor Networks
-ECE4013,Cryptography and Network Security
-MAT3005,Applied Numerical Methods
-PHY1002,Materials Science
-CSE2002,Theory of Computation and Compiler Design
+Start	
+default	
+ECE1003	Electromagnetic Field Theory
+ECE2002	Analog Electronic Circuits
+MAT2002	Applications of Differential & Difference Equations
+ECE2003	Digital Logic Design
+ECE2005	Probability Theory & Random Processes
+ECE2008	Robotics and Automation
+MGT1022	Lean Startup Management
+CSE2001	Computer Architecture and Organization
+ECE2004	Transmission Lines & Waveguides
+ECE2006	Digital Signal Processing
+CSE2003	Data Structures and Algorithms
+CSE2005	Operating System
+CSE1002	Problem Solving & Object Oriented Programming
+MGT1034	Project Management
+CSE2004	Database Management Systems
+ECE3002	VLSI System Design
+ECE3003	Microcontroller & Its Applications
+ECE3001	Analog Communication Systems
+ECE3009	Neural Network and Fuzzy Control
+ECE3013	Linear Integrated Circuits
+GER1001	Grundstufe Deustch
+CSE3001	Software Engineering
+ECE4001	Digital Communications Systems
+MAT3004	Applied Linear Algebra
+ECE3005	Digital Image Processing
+ECE4003	Embedded System Design
+CSE6005	Machine Learning
+CSE4001	Parallel and Distributed Computing
+ECE4002	Advanced Microcontrollers
+ECE4011	Wireless Sensor Networks
+ECE4008	Computer Communication
+ECE1008	Electronics Hardware Trouble Shooting
+ECE3999	Technical Answers for Real World Problems
+CSE6009	IoT Technology and Applications
+ECE1001	Fundamentals of Electrical Circuits
+ECE1002	Semiconductor Devices and Circuits
+ECE1003	Electromagnetic Field Theory
+ECE1004	Signals and Systems
+ECE1005	Sensors and Instrumentation
+ECE2001	Network Theory
+ECE2002	Analog Electronic Circuits
+ECE2003	Digital Logic Design
+ECE2004	Transmission Lines and Waveguides
+ECE2005	Probability Theory and Random Processes
+ECE2006	Digital Signal Processing
+ECE3001	Analog Communication Systems
+ECE3002	VLSI System Design
+ECE3003	Microcontroller and its Applications
+ECE4001	Digital Communication Systems
+MAT2002	Applications of Differential and Difference Equations
+MAT3004	Applied Linear Algebra
+CSE2003	Data Structures and Algorithms
+CSE2005	Operating Systems
+ECE1006	Introduction to Nanoscience and Nanotechnology
+ECE1007	Opto Electronics
+ECE1008	Electronics Hardware Trouble Shooting
+ECE2008	Robotics and Automation
+ECE2010	Control Systems
+ECE3004	Computer Organization and Architectures
+ECE3005	Digital Image Processing
+ECE3009	Neural Networks and Fuzzy Control
+ECE3010	Antennas and Wave Propagation
+ECE3011	Microwave Engineering
+ECE3013	Linear Integrated Circuits
+ECE4002	Advanced Microcontrollers
+ECE4003	Embedded System Design
+ECE4004	Embedded C and Linux
+ECE4005	Optical Communication and Networks
+ECE4007	Information Theory and Coding
+ECE4008	Computer Communication
+ECE4009	Wireless and Mobile Communication
+ECE4010	Satellite Communication
+ECE4011	Wireless Sensor Networks
+ECE4013	Cryptography and Network Security
+MAT3005	Applied Numerical Methods
+PHY1002	Materials Science
+CSE2002	Theory of Computation and Compiler Design
+

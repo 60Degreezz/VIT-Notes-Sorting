@@ -142,7 +142,7 @@ class Notes(wx.Frame):
         text1 = wx.StaticText(panel, label="Notes-Sortings")
         sizer.Add(text1, pos=(0,0), flag=wx.TOP|wx.LEFT|wx.BOTTOM, border=15)
 
-        icon = wx.StaticBitmap(panel, bitmap=wx.Bitmap(os.path.join(sys.path[0], Project_Dir + "/UI-Dev/icon.png")))
+        icon = wx.StaticBitmap(panel, bitmap=wx.Bitmap(os.path.join(sys.path[0], Project_Dir + "/icon.png")))
         sizer.Add(icon, pos=(0, 2), flag=wx.TOP|wx.RIGHT|wx.ALIGN_RIGHT,border=5)
 
         #Show Basic instructions on the data to be 

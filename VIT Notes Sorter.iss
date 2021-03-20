@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "VIT Notes Sorter"
-#define MyAppVersion "1.0"
+#define MyAppVersion "1.1"
 #define MyAppPublisher "60Degrees"
 #define MyAppURL "www.60Degrees.com"
 #define MyAppExeName "VIT_Notes_Sorter.exe"
@@ -20,13 +20,13 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
-LicenseFile=D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\LICENSE
-InfoAfterFile=D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\Finish.txt
+LicenseFile=D:\Offline_Projects\GIT\VIT-Notes-Sorting\LICENSE
+InfoAfterFile=D:\Offline_Projects\GIT\VIT-Notes-Sorting\Setup\Finish.txt
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputDir=D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting
-OutputBaseFilename=VIT Notes Sorter-setup
-SetupIconFile=D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\icon.ico
+OutputDir=D:\Offline_Projects\GIT\VIT-Notes-Sorting
+OutputBaseFilename=VIT Notes Sorter Setup
+SetupIconFile=D:\Offline_Projects\GIT\VIT-Notes-Sorting\UI-DEV\icon.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -39,10 +39,10 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 
 [Files]
-Source: "D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\VIT_Notes_Sorter.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\Course_List.csv"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\icon.png"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Offline_Projects\GIT Repo's\VIT-Notes-Sorting\VIT_Notes_Sorter.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\Offline_Projects\GIT\VIT-Notes-Sorting\VIT_Notes_Sorter.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\Offline_Projects\GIT\VIT-Notes-Sorting\Course_List.csv"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\Offline_Projects\GIT\VIT-Notes-Sorting\UI-DEV\icon.png"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\Offline_Projects\GIT\VIT-Notes-Sorting\VIT_Notes_Sorter.exe"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

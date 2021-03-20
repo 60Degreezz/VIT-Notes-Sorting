@@ -140,43 +140,44 @@ class Notes(wx.Frame):
 
         sizer = wx.GridBagSizer(15, 15)
 
-        text1 = wx.StaticText(panel, label="Notes-Sharing")
+        text1 = wx.StaticText(panel, label="Notes-Sortings")
         sizer.Add(text1, pos=(0,0), flag=wx.TOP|wx.LEFT|wx.BOTTOM, border=15)
 
-        icon = wx.StaticBitmap(panel, bitmap=wx.Bitmap(os.path.join(sys.path[0], Project_Dir + "/icon.png")))
-        sizer.Add(icon, pos=(0, 8), flag=wx.TOP|wx.RIGHT|wx.ALIGN_RIGHT,border=5)
+        icon = wx.StaticBitmap(panel, bitmap=wx.Bitmap(os.path.join(sys.path[0], Project_Dir + "/UI-Dev/icon.png")))
+        sizer.Add(icon, pos=(0, 2), flag=wx.TOP|wx.RIGHT|wx.ALIGN_RIGHT,border=5)
 
-        text0 = wx.StaticText(panel, label="INSTRUCTIONS: \n\n Download Folder: The folder in which your notes get downloaded from VTOP" +
+        #Show Basic instructions on the data to be 
+        instr = wx.StaticText(panel, label="INSTRUCTIONS: \n\n To checkout how this program works read the Documentation.pdf file\n\n Download Folder: The folder in which your notes get downloaded from VTOP" +
                               " \n\n Storage Folder: The folder in which you want your VTOP notes to be sorted into.")
-        sizer.Add(text0, pos=(1,0), flag=wx.TOP|wx.LEFT|wx.BOTTOM, border=15)
+        sizer.Add(instr, pos=(1,0), flag=wx.TOP|wx.LEFT|wx.BOTTOM, border=15)
 
-        #Show DieDialog-2 button
+        #Show DieDialog-1 button
         dirDlgBtn2 = wx.Button(panel, label="Browse" , id = 2)
         sizer.Add(dirDlgBtn2, pos=(2, 14), flag=wx.TOP|wx.RIGHT, border=5)
         dirDlgBtn2.Bind(wx.EVT_BUTTON, self.onDir)
 
-        #Storage location-2
+        #Storage location-1
         text3 = wx.StaticText(panel, label="Download Folder ")
         sizer.Add(text3, pos=(2, 0), flag=wx.LEFT|wx.TOP, border=10)
 
         
-        #Panel-2 next to Storage location
+        #Panel-1 next to Storage location
         #will display the file location here
         self.tc2 = wx.TextCtrl(panel, value = "Default")
         sizer.Add(self.tc2, pos=(2, 1), span=(1, 13), flag=wx.TOP|wx.EXPAND,border=5)
 
 
-        #Show DieDialog-1 button
+        #Show DieDialog-2 button
         dirDlgBtn1 = wx.Button(panel, label="Browse" , id = 1 )
         sizer.Add(dirDlgBtn1, pos=(3, 14), flag=wx.TOP|wx.RIGHT, border=5)
         dirDlgBtn1.Bind(wx.EVT_BUTTON, self.onDir , dirDlgBtn1)
 
-        #Storage location-1
+        #Storage location-2
         text2 = wx.StaticText(panel, label="Storage Folder")
         sizer.Add(text2, pos=(3, 0), flag=wx.LEFT|wx.TOP, border=10)
 
         
-        #Panel-1 next to Storage location
+        #Panel-2 next to Storage location
         #will display the file location here
         self.tc1 = wx.TextCtrl(panel, value = "Default")
         sizer.Add(self.tc1, pos=(3, 1), span=(1, 13), flag=wx.TOP|wx.EXPAND,border=5)
@@ -334,7 +335,6 @@ def init():
 def main():
     global Download_Loc, Sorting_Loc, Project_Dir
     init()
-    print(CSV_File)
     course_data = Read_CSV()
     no_of_files = 0 
     while True:
@@ -344,6 +344,7 @@ def main():
             continue
         else:
             Download_Loc = course_data[1][1]
+            print(Download_Loc)
             Sorting_Loc = course_data[2][1]
         if len(os.listdir(Download_Loc))>no_of_files:
             file_names = Scan_Sort(course_data)

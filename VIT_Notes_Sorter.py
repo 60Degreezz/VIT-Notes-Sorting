@@ -12,7 +12,6 @@ This program is written by Himanshu Savargaonkar :)
 This program will startup when the computer is booted, will check your downloads folder for any updates every 1 min and sort the files in the VIT VTOP format.
 Follow the following step to make that happen.
 
-
 '''
 
 
